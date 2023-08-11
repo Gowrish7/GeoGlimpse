@@ -17,15 +17,37 @@ import { FooterComComponent } from './footer-com/footer-com.component';
 import {MatButtonModule} from '@angular/material/button';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatFormFieldModule} from '@angular/material/form-field';
+//popup modal
+import {MatDialogModule} from '@angular/material/dialog';
 
 // footer
 import {MatInputModule} from '@angular/material/input';
+import { PopupComponent } from './popup/popup.component';
+
+import { HeaderComponent } from './header/header.component';
+import { HomeComponent } from './home/home.component';
+
+//github buttons
+import { GithubButtonModule } from 'ng-github-button';
+import { NavbarComponent } from './navbar/navbar.component';
+import { SpinnerComponent } from './spinner/spinner.component';
+
+
+
+//spinner
+
 @NgModule({
   declarations: [
     AppComponent,
     CountryListComponent,
     FilterPipe,
-    FooterComComponent
+    FooterComComponent,
+    PopupComponent,
+    HeaderComponent,
+    HomeComponent,
+    NavbarComponent,
+    SpinnerComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -41,7 +63,10 @@ import {MatInputModule} from '@angular/material/input';
     MatButtonModule,
     MatGridListModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    MatDialogModule,
+    GithubButtonModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

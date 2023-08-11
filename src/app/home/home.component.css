@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;600;700;900&display=swap');
+*{
+  font-family:'Poppins', sans-serif;
+}
+
+mat-card{
+    background-color: rgb(4, 4, 4);
+    justify-content: center;
+}
+
+.globe-img{
+    text-align: center;
+    width: 100%;
+}
+
+img{
+    width: 35%;
+}
+
+mat-card-title ,mat-card-subtitle{
+    color: white;
+}
+
+mat-card-title {
+    
+    font-weight: bolder;
+    font-size: 40px
+}
+
+mat-card-subtitle{
+    margin-top: 2rem;
+    font-family:'Poppins', sans-serif;
+    font-weight: light;
+    font-size: 20px
+}
+
+.get-started-btn button{
+    margin-top: 2rem ;
+    width: 10%;
+    background: greenyellow;
+}
+
+mat-grid-tile {
+  margin-top: 50em;
+  background: lightblue;
+}
+
+.github-button{
+    margin-left: center;
+}
+
+.home-page-contents {
+    padding: 20px;
+    background-color: rgb(59, 59, 59);
+    color: whitesmoke;
+  }
+  
+  .flex-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%; /* Take up the whole available width */
+    max-width: 1200px; /* Set a maximum width if desired */
+    margin: 0 auto; /* Center the container */
+  }
+  
+  .flex-item {
+    padding: 10px;
+    box-sizing: border-box;
+  }
+  
+
+  mat-card-image{
+    margin-bottom: 15px;
+  }
+
+
+  .title-flexbox{
+    font-weight:1000;
+    color: rgb(241, 241, 231);
+  }
+  /* mobile */
+
+  @media screen and (max-width: 599px) {
+    .flex-container {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    
+    .first-line {
+      font-size: x-large;
+      /* color: lightblue; */
+    }
+
+    .second-line{
+      font-weight: 400;
+    }
+    
+
+  }
+  
+  @media (min-width: 768px) and (max-width: 1023px) {
+    .flex-item {
+      flex-basis: 32%; /* Adjust to leave a small gap between items */
+    }
+  }
+  

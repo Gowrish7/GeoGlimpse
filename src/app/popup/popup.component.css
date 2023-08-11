@@ -1,0 +1,80 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;600;700;900&display=swap");
+
+*{
+    font-family: "Poppins", sans-serif;
+}
+
+.outer-popup-box{
+    padding-top: 1rem;
+    
+}
+
+.Weighted-font {
+    font-weight: bold;
+    color: black;
+    margin-bottom: 10px;
+  }
+
+span{
+    padding-right: 30px;
+    font-weight: light;
+    color: grey;
+}
+
+.country-space{
+        padding-right: 50px
+}
+
+img{
+    border-radius: 2px;
+    
+}
+/* Add Flexbox styles to the header container */
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  mat-card {
+    padding: 10px;
+    margin: 5px; 
+  }
+
+  .icon-align{
+    margin-left: 500px;
+
+
+  }
+
+  .header-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  .spacer {
+    flex-grow: 1; /* Pushes the button to the right end */
+  }
+  
+  @media (min-width: 768px) and (max-width: 1023px) {
+  .icon-align{
+    margin-left: 200px;
+    padding-right: 16px;
+  }
+  img{
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 599px){
+  span{
+    padding-right: 5px;
+  }
+  img{
+    width: 100%;
+  }
+  .row-container{
+    width: 100%;
+  }
+  
+
+}

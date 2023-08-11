@@ -1,73 +1,3 @@
-<!-- <div class="header-top">
-<div class="header-items">
-<mat-toolbar>
-  <mat-toolbar-row>
-    <span><img src="../../assets/logo.png" alt=""></span>
-    <span class="example-spacer"></span>
-    <span><p> Best list of countries with thier flags</p>
-    </span>
-  </mat-toolbar-row>
-  <mat-toolbar-row>
-    <span></span>
-    <span class="example-spacer second-line"></span>
-    <span><p class="second-line-info"> On the whole internet!!</p>
-    </span>
-  </mat-toolbar-row>
-  </mat-toolbar>
-</div>
-</div>
-
-<form
-  [formGroup]="searchForm"
-  class="searchBar"
-  (ngSubmit)="onSearchSubmit()"
-  align="center"
->
-  <input
-    type="text"
-    placeholder="Search for a country..."
-    formControlName="searchValue"
-    class="searchBarInput"
-    unique="myUniqueIdentifier"
-  />
-  <button type="submit">Search</button>
-</form>
-
-<div class="outer-card">
-  <div class="row" fxLayout="row wrap">
-    <div
-      *ngFor="let country of displayedCountries | slice:0:16 ; let i = index"
-      class="column"
-      (click)="onCardClicked()"
-      fxFlex.xs="100%"
-      fxFlex.sm="33%"
-    >
-      <mat-card>
-        <mat-card-header align="center">
-          <img
-            [src]="country.flags.svg"
-            alt="{{ country.name }} Flag"
-            width="100%"
-            height="150px"
-            class="flags"
-          />
-        </mat-card-header>
-        <mat-card-content align="start">
-          <h3>{{ country.name }}</h3>
-        </mat-card-content>
-        <mat-card-footer>
-          <mat-card-subtitle align="start">
-            {{ country.region }}
-          </mat-card-subtitle>
-        </mat-card-footer>
-      </mat-card>
-    </div>
-  </div>
-</div>
-<div class="example-button-row">
-  <button mat-raised-button color="primary" class="load-more" (click)="onLoadMore()">Load More</button>
-</div> 
--->
 <!-- final 7-8-23-->
 
  <div class="header-top">
@@ -88,8 +18,12 @@
       </mat-toolbar>
     </div>
 </div>
-
-<div class="search-btn-outer">
+<!-- spinner start -->
+<div class="spinner-container" *ngIf="isLoading">
+  <app-spinner></app-spinner>
+</div>
+<!-- spinner ends -->
+<div class="search-btn-outer" *ngIf="!isLoading">
 <div class="search-contents">
   <form
   [formGroup]="searchForm"
@@ -97,17 +31,20 @@
   (ngSubmit)="onSearchSubmit()"
   align="center"
 >
-<!-- placeholder="Search for a country..." -->
+
 <input
 type="text"
 formControlName="searchValue"
 class="searchBarInput"
 unique="myUniqueIdentifier" 
-/>
-<button type="submit" class="search-button">SEARCH</button>
+*ngIf="!isLoading"/>
+<button type="submit" class="search-button" *ngIf="!isLoading">SEARCH</button>
 </form>
 </div>
 </div>
+
+
+
 <div class="outer-card">
   <div class="row" fxLayout="row wrap">
     <div
@@ -117,7 +54,7 @@ unique="myUniqueIdentifier"
       fxFlex.xs="100%"
       fxFlex.sm="33%"
     >
-    <mat-card>
+    <mat-card  (click)="openDialog(country)"> 
       <mat-card-header align="center">
         <img
           [src]="country.flags.svg"
@@ -135,13 +72,13 @@ unique="myUniqueIdentifier"
           {{ country.region }}
         </mat-card-subtitle>
       </mat-card-footer>
-    </mat-card>
+      </mat-card>
     </div>
   </div>
 </div>
 
+
 <div class="example-button-row">
   <button mat-raised-button color="primary" class="load-more" (click)="onLoadMore()">Load More</button>
 </div>
-
-
+ 

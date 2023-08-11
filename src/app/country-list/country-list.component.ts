@@ -1,8 +1,15 @@
 
+// chatgpt
+
+
+
 // import { Component, OnInit } from '@angular/core';
 // import { FormBuilder, FormGroup } from '@angular/forms';
 // import { CountryService } from '../country.service';
 // import { Country } from '../country.model';
+// import { MatDialog } from "@angular/material/dialog";
+// import { Dialog } from '@angular/cdk/dialog';
+// import { PopupComponent } from '../popup/popup.component';
 
 // @Component({
 //   selector: 'app-country-list',
@@ -13,13 +20,16 @@
 //   searchForm: FormGroup;
 //   countries: Country[] = [];
 //   displayedCountries: Country[] = [];
+//   pageSize: number = 16;
 
-//   constructor(private countryService: CountryService, private fb: FormBuilder) {
+//   // modal
+//   constructor(private countryService: CountryService, private fb: FormBuilder, private dialog:MatDialog) {
 //     this.searchForm = this.fb.group({
 //       searchValue: ''
 //     });
 //   }
-
+  
+ 
 //   ngOnInit(): void {
 //     this.fetchData();
 //   }
@@ -28,12 +38,16 @@
 //     this.countryService.getCountries().subscribe(
 //       (data: Country[]) => {
 //         this.countries = data;
-//         this.displayedCountries = data; 
+//         this.updateDisplayedCountries();
 //       },
 //       (error: any) => {
 //         console.error(error);
 //       }
 //     );
+//   }
+
+//   updateDisplayedCountries(): void {
+//     this.displayedCountries = this.countries.slice(0, this.pageSize);
 //   }
 
 //   onSearchSubmit(): void {
@@ -43,23 +57,43 @@
 //     );
 //   }
 
-//   onCardClicked() {
-//     alert('jai');
+//   onLoadMore(): void {
+//     const startIndex = this.displayedCountries.length;
+//     const endIndex = startIndex + this.pageSize;
+
+//     if (endIndex <= this.countries.length) {
+//       const newCountries = this.countries.slice(startIndex, endIndex);
+//       this.displayedCountries = [...this.displayedCountries, ...newCountries];
+//     }
 //   }
 
-//   onLoadMore() :void{
-
-//   }
+  
+// // modal
+// openDialog(){
+//   this.dialog.open(PopupComponent,{
+//     width:'50%',
+//     height:'300px'
+//   })
 // }
 
-// chatgpt
+// // modal ends
+
+//   onCardClick():void{
+//     alert("jai")
+//   }
+// } 
 
 
 
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { CountryService } from '../country.service';
-import { Country } from '../country.model';
+import { Country, Currency } from '../country.model';
+import { MatDialog } from "@angular/material/dialog";
+import { PopupComponent } from '../popup/popup.component';
+
+//spinner
+import { SpinnerComponent } from '../spinner/spinner.component';
 
 @Component({
   selector: 'app-country-list',
@@ -71,25 +105,44 @@ export class CountryListComponent implements OnInit {
   countries: Country[] = [];
   displayedCountries: Country[] = [];
   pageSize: number = 16;
+  currency:Currency[]=[];
+  //spinner
+  isLoading: boolean = false;
 
-  constructor(private countryService: CountryService, private fb: FormBuilder) {
+  constructor(
+    private countryService: CountryService,
+    private fb: FormBuilder,
+    private dialog: MatDialog
+  ) {
     this.searchForm = this.fb.group({
       searchValue: ''
     });
   }
 
   ngOnInit(): void {
+    //spinner start
+    this.isLoading = true;
+    // spinner end
     this.fetchData();
   }
 
   fetchData(): void {
+    //spinner
+    this.isLoading = true;
+    //spinner ends
     this.countryService.getCountries().subscribe(
       (data: Country[]) => {
         this.countries = data;
         this.updateDisplayedCountries();
+        //spinner start
+        this.isLoading = false;
+        //spinner end
       },
       (error: any) => {
         console.error(error);
+        //spinner start
+        this.isLoading = false;
+        //spinner ends
       }
     );
   }
@@ -114,7 +167,15 @@ export class CountryListComponent implements OnInit {
       this.displayedCountries = [...this.displayedCountries, ...newCountries];
     }
   }
-} 
+
+    openDialog(country: Country ): void {
+    this.dialog.open(PopupComponent, {
+      width: '50%',
+      height: '200px',
+      data: country,
+
+    });
+  }
 
 
-
+}

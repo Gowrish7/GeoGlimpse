@@ -20,8 +20,8 @@
 }
 
 .logo {
-  width: 50px; /* Adjust size as needed */
-  height: 40px; /* Adjust size as needed */
+  width: 50px; 
+  height: 50px; 
   margin-left: 10px;
 }
 
@@ -37,6 +37,10 @@
 .navbar-right {
   display: flex;
   align-items: center;
+  gap: 10px;
+}
+.active{
+  background-color: rgb(59, 59, 59);
 }
 .geo-glimpse {
   padding-left: 84px;
@@ -48,5 +52,35 @@
 }
 
 @media screen and (max-width: 599px){
+  .geo-glimpse{
+    margin-top: 13px;
+    margin-left: -60px;
+  }
+
+.navbar-right{
+  gap: 0;
+
+}
+.navbar-left{
+  padding-left: 10px;
+}
+
+.mat-toolbar .navbar-right button {
+  margin-right: 0;
+}
+
+  button{
+    margin: 0;
+    padding: 0;
+    margin-top: 13px;
+    margin-left: 8px;
+    
+  }
+
+  .navbar-right {
+    flex-direction: column;
+    align-items: center;
+  }
+
 
 }

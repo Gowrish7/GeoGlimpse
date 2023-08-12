@@ -1,82 +1,80 @@
-*{
-    font-family: 'Poppins', sans-serif;
+* {
+  font-family: "Poppins", sans-serif;
 }
-.footer-box{
-    background-color: #272727;
-    margin-bottom: 0;
+.footer-box {
+  background-color: #272727;
+  margin-bottom: 0;
 }
 
-.footer-inner-box{
-    padding-top: 50px;
-    margin: 0 200px;
+.footer-inner-box {
+  padding-top: 50px;
+  margin: 0 200px;
 }
-mat-toolbar{
-    background-color: #272727;
-    color: white; 
+mat-toolbar {
+  background-color: #272727;
+  color: white;
 }
 
 .example-spacer {
-    flex: 1 1 auto;
-  }
-.second-line-info{
-    padding-top: 0px;
+  flex: 1 1 auto;
+}
+.second-line-info {
+  padding-top: 0px;
   margin: -60px 0;
 }
 
-span{
-    font-size: 14px;
+span {
+  font-size: 14px;
 }
 
-input{
-    font-size: 14px;
-    padding-left: 0.5rem;
-    color: rgb(5, 5, 5);
+input {
+  font-size: 14px;
+  padding-left: 0.5rem;
+  color: rgb(5, 5, 5);
 }
 
-button{
-    text-align: center;
+button {
+  text-align: center;
 }
 
-input[value]{
-    font-size: 14px;
-    color: rgba(142, 142, 142, 0.96);
+input[value] {
+  font-size: 14px;
+  color: rgba(142, 142, 142, 0.96);
 }
 
 /* tablet code */
-@media (min-width: 768px) and (max-width: 1023px){
-    .footer-inner-box{
-        margin: 0 105px;
-    }
+@media (min-width: 768px) and (max-width: 1023px) {
+  .footer-inner-box {
+    margin: 0 105px;
+  }
 }
 
 /* mobile code */
-@media screen and (max-width: 599px){
-    .footer-inner-box{
-        margin: 0 50px;
-    }
+@media screen and (max-width: 599px) {
+  .footer-inner-box {
+    margin: 0 50px;
+  }
 
-    .email-box{
-        height: 40px;
-        width: 100px;
-    }
+  .email-box {
+    height: 40px;
+    width: 100px;
+  }
 
-    .sub-btn{
-        width: 20px;
-        font-size: small;
-    }
+  .sub-btn {
+    width: 20px;
+    font-size: small;
+  }
 
-    .sub-btn p{
-        font-size: x-small;
-        padding-top: 7px;
-    }
+  .sub-btn p {
+    font-size: x-small;
+    padding-top: 7px;
+  }
 
-    img{
-        width: 120px;
-    }
-    
-    .footer-text{
-        font-size: x-small;
-    }
-    
+  img {
+    width: 120px;
+  }
 
+  .footer-text {
+    font-size: x-small;
+  }
 }

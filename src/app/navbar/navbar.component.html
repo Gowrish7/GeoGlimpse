@@ -1,15 +1,17 @@
-<!-- navbar.component.html -->
+
+
 <mat-toolbar color="primary" class="navbar" fxLayout="row" fxLayout.xs="column" fxLayoutAlign="space-between center">
   <div class="navbar-left" fxLayout="row" fxLayoutAlign="center center">
     <img src="../../assets/geoglimpse.png" alt="Logo" class="logo">
+
   </div>
   
   <div class="navbar-center" fxLayout="row" fxLayoutAlign="center center">
     <span class="geo-glimpse">GeoGlimpse</span>
   </div>
-  
-  <div class="navbar-right" fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="end center">
-    <button mat-button routerLink="/">Home</button>
-    <button mat-button routerLink="/api">API</button>
+
+  <div class="navbar-right" fxLayout="row" fxLayoutGap="10px" fxLayoutAlign="end center" fxLayoutAlign.xs="center center" fxLayoutAlign.gt-xs="end center">
+    <button mat-button routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Home</button>
+    <button mat-button routerLink="country-list" routerLinkActive="active" >API</button>
   </div>
 </mat-toolbar>

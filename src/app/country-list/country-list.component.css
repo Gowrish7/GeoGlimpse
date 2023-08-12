@@ -3,12 +3,13 @@
 
 /* blue background */
 .header-top {
-  height: 280px;
+  height: 260px;
   background-color: #074985;
   width: 100%;
   margin: 0;
   top: 0;
-  /* position: sticky; */
+  position: sticky;
+  z-index: 100;
 }
 
 /* top div for showing logo and info */
@@ -39,7 +40,6 @@
   margin: -55px 0;
 }
 
-
 .search-btn-outer {
   margin: 0 200px;
   background-color: rgb(255, 255, 255);
@@ -48,6 +48,9 @@
   align-items: center;
   border-radius: 7px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0);
+  position: sticky;
+  top: 220px;
+  z-index: 101;
 }
 
 .search-contents {
@@ -58,6 +61,12 @@
   width: 75%;
   height: 40px;
   border-color: rgba(235, 235, 235, 0.719);
+}
+.content-section {
+  margin-top: 330px;
+  padding: 20px 0;
+  overflow-y: auto;
+  max-height: calc(100vh - 330px);
 }
 
 .search-button {
@@ -73,6 +82,17 @@
   font-weight: 300;
 }
 
+.spinner-container {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.8);
+  z-index: 99;
+}
+
 /* search buttton responsive code */
 /* For mobile devices */
 @media (max-width: 767px) {
@@ -86,51 +106,49 @@
     align-items: center;
   }
   .header-items {
-    margin: 0 ;
+    margin: 0;
   }
-  .mat-toolbar span p{
+  .mat-toolbar span p {
     padding-left: 5px;
     font-size: small;
   }
-  .second-line-info{
+  .second-line-info {
     padding-right: 65px;
   }
-  img{
+  img {
     padding: 0;
     width: 135px;
   }
   /* search  button */
-  .search-btn-outer{
+  .search-btn-outer {
     margin: 20px;
     margin-top: -45px;
     height: 120px;
   }
 
-  .search-button{
-   margin-top: 7px; 
+  .search-button {
+    margin-top: 7px;
     width: 30%;
     font-size: 12px;
   }
 
-  .searchBarInput{
+  .searchBarInput {
     width: 75%;
   }
 
-  .mat-mdc-card h3,mat-card-subtitle{
-      text-align: center;
+  .mat-mdc-card h3,
+  mat-card-subtitle {
+    text-align: center;
   }
 
-
-  .mat-mdc-card img{
+  .mat-mdc-card img {
     width: 100%;
-
   }
 
-    .example-button-row .load-more{
-      margin: 16px;
-      margin-left: 145px;
-    }
-  
+  .example-button-row .load-more {
+    margin: 16px;
+    margin-left: 145px;
+  }
 }
 
 /* For tablet devices */
@@ -138,7 +156,9 @@
   .search-btn-outer {
     text-align: center;
     padding: 20px;
+    top: 220px;
   }
+
   .searchBar {
     display: flex;
     flex-direction: row;
@@ -158,10 +178,9 @@
     padding-top: 6px;
     width: 30%;
   }
-  .header-items{
+  .header-items {
     margin: 0 105px;
   }
-
 }
 
 /* to display the code in rwo format */
@@ -239,4 +258,3 @@ mat-card-subtitle {
   margin-bottom: 30px;
   margin-left: 46%;
 }
-

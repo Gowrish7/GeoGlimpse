@@ -81,9 +81,8 @@ export class CountryListComponent implements OnInit {
   openDialog(country: Country): void {
     this.dialog.open(PopupComponent, {
       width: '50%',
-      height: '200px',
+      height: '400px',
       data: country,
-
     });
   }
 

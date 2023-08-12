@@ -83,7 +83,6 @@ export class CountryListComponent implements OnInit {
       width: '50%',
       height: '400px',
       data: country,
-
     });
   }
 
